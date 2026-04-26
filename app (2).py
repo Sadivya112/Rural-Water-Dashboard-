@@ -82,7 +82,9 @@ st.divider()
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Global Map", "Trends", "Comparison", "Analysis", "Data"])
 
 with tab1:
-    map_year = st.select_slider("Select year", options=sorted(filtered["Year"].unique()), value=latest_year)
+    available_years = sorted(filtered["Year"].unique())
+map_year = st.selectbox("Select year", available_years, index=len(available_years)-1)
+
     map_data = filtered[filtered["Year"] == map_year]
     fig_map = px.choropleth(
         map_data,
