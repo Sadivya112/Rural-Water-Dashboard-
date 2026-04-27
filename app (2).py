@@ -180,9 +180,9 @@ with tab3:
         st.dataframe(summary_data, use_container_width=True)
 
 with tab4:
-available_years_analysis = sorted(filtered["Year"].unique())
-analysis_year = st.selectbox("Select year", available_years_analysis, index=len(available_years_analysis)-1, key="analysis_year")
-analysis_data = filtered[filtered["Year"] == analysis_year]
+    available_years_analysis = sorted(filtered["Year"].unique())
+    analysis_year = st.selectbox("Select year", available_years_analysis, index=len(available_years_analysis)-1, key="analysis_year")
+    analysis_data = filtered[filtered["Year"] == analysis_year]
 
     col_left, col_right = st.columns(2)
 
