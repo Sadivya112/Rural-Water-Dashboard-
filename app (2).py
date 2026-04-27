@@ -84,8 +84,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Global Map", "Trends", "Comparison", "A
 with tab1:
     available_years = sorted(filtered["Year"].unique())
 map_year = st.selectbox("Select year", available_years, index=len(available_years)-1)
-
-    map_data = filtered[filtered["Year"] == map_year]
+map_data = filtered[filtered["Year"] == map_year]
     fig_map = px.choropleth(
         map_data,
         locations="Country Code",
